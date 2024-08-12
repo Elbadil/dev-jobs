@@ -8,24 +8,29 @@ const JobListing = ({ id, title, type, description, salary, location }) => {
   let jobDescription = description;
 
   if (!showFullDescription) {
-    jobDescription = jobDescription.substring(0, 100) + "...";
+    jobDescription =
+      jobDescription.length >= 100
+        ? jobDescription.substring(0, 100) + "..."
+        : jobDescription;
   }
 
   return (
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="p-4">
-        <div className="mb-6">
+        <div className="mb-3">
           <div className="text-gray-600 my-2">{type}</div>
           <h3 className="text-xl font-bold">{title}</h3>
         </div>
 
         <div className="mb-3">{jobDescription + " "}</div>
-        <button
-          className="text-indigo-500 hover:text-indigo-600 mb-5"
-          onClick={() => setShowFullDescription((prevState) => !prevState)}
-        >
-          {showFullDescription ? "Less" : "More"}
-        </button>
+        {jobDescription.length >= 100 && (
+          <button
+            className="text-indigo-500 hover:text-indigo-600 mb-5"
+            onClick={() => setShowFullDescription((prevState) => !prevState)}
+          >
+            {showFullDescription ? "Less" : "More"}
+          </button>
+        )}
 
         <h3 className="text-indigo-500 mb-2">{salary} / Year</h3>
 

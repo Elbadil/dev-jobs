@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "10",
-      "title": "React Jober",
-      "type": "Remote",
-      "description": "you need to be fit for this job",
-      "location": "Tetouan, Morocco",
-      "salary": "$90K - 100K",
-      "compony": {
-        "name": "Amixtore",
-        "description": "Great Company we are",
-        "contactEmail": "contact@teksolutions.com",
-        "contactPhone": "555-555-5555"
-      }
     }
   ]
 }
